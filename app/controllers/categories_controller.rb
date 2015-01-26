@@ -11,8 +11,9 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @brand = Brand.find(params[:brand_id])
-    @categories = @brand.categories.all
+    #@brand = Brand.find(params[:brand_id])
+    #@categories = @brand.categories.all
+    @categories = Category.all
     @category = @categories.find(params[:id])
   end
   

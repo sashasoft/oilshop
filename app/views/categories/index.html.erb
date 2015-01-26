@@ -7,10 +7,10 @@
  
   <% @brand.categories.each do |category| %>
     <tr>
-      <td><%= category.name %></td>
-      <td><%= link_to 'Show', brand_category_path(@brand, category)%><td>
-      <td><%= link_to 'Edit', edit_brand_category_path(@brand, category) %></td>     
-      <td><%= link_to 'Destroy', [@brand, category],
+      <td><%= link_to "#{category.name}", category_subcategories_path(category) %></td>
+      <td><%= link_to 'Show', category_path(category)%><td>
+      <td><%= link_to 'Edit', edit_category_path(category) %></td>     
+      <td><%= link_to 'Destroy', [category],
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
       

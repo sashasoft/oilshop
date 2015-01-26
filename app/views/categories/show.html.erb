@@ -6,4 +6,4 @@
   Category description:
   <%= @category.description %>
 </p>
-<%= link_to 'All brands', brands_path %>|<%= link_to 'All categories', brand_categories_path %>
+<%= link_to 'All brands', brands_path %>|<%= link_to 'All categories', brand_categories_path(@category.brand) %>
