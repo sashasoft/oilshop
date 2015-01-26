@@ -1,0 +1,24 @@
+<h1>Listing brands</h1>
+ 
+<table>
+  <tr>
+    <th>Brand name:</th>
+    <th>Brand id:</th>
+    <th>Qt. of the categories</th>
+  </tr>
+ 
+  <% @brands.each do |brand| %>
+    <tr>
+      <td><%= link_to "#{brand.name}", brand_categories_path(brand) %></td>
+      <td><%= brand.id %></td>
+      <td><%= brand.categories.count %></td>
+      <td><%= link_to 'Show', brand_path(brand) %></td>
+      <td><%= link_to 'Edit', edit_brand_path(brand) %></td>     
+      <td><%= link_to 'Destroy', brand_path(brand),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td> 
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New brand', new_brand_path %>|
