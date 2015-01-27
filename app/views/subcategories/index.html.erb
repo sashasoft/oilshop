@@ -1,1 +1,24 @@
-<h1>list all subcategories</h1>
+<h1> All subcategories</h1>
+
+<table>
+  <tr>
+    <th>Subcategories name:</th>
+  </tr>
+ 
+  <% @category.subcategories.each do |subcategory| %>
+    <tr>
+      <td><%= link_to "#{subcategory.name}", category_subcategories_path(category) %></td>
+      <td><%= link_to 'Show', category_path(category)%><td>
+      <td><%= link_to 'Edit', edit_category_path(category) %></td>     
+      <td><%= link_to 'Destroy', [subcategory],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      
+    </tr>
+  <% end %>
+</table>
+
+
+
+
+<%= link_to 'New Type', new_category_subcategory_path(@category) %>|<%= link_to 'Back to Categories', brand_categories_path(@category.brand) %>
