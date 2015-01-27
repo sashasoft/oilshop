@@ -6,4 +6,7 @@
   Category description:
   <%= @category.description %>
 </p>
-<%= link_to 'All brands', brands_path %>|<%= link_to 'All categories', brand_categories_path(@category.brand) %>
+<%= link_to 'All brands', brands_path %>|<%= link_to 'All categories', brand_categories_path(@category.brand) %>|
+<%= link_to 'Destroy', [@category],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
