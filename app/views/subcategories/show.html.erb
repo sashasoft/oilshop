@@ -1,0 +1,9 @@
+<p>
+  Type name:
+  <strong><%= @subcategory.name %></strong>
+</p>
+<p>
+  Category description:
+  <%= @subcategory.description %>
+</p>
+<%= link_to 'All types', category_subcategories_path(@subcategory.category) %>|

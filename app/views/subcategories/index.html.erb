@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>Subcategories name:</th>
+    <th>Типы моторных масел:</th>
   </tr>
  
   <% @category.subcategories.each do |subcategory| %>
     <tr>
-      <td><%= link_to "#{subcategory.name}", category_subcategories_path(category) %></td>
-      <td><%= link_to 'Show', category_path(category)%><td>
-      <td><%= link_to 'Edit', edit_category_path(category) %></td>     
+      <td><%= subcategory.name %></td>
+      <td><%= link_to 'Show', subcategory_path(subcategory)%><td>
+      <td><%= link_to 'Edit', edit_subcategory_path(subcategory) %></td>     
       <td><%= link_to 'Destroy', [subcategory],
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
@@ -21,4 +21,4 @@
 
 
 
-<%= link_to 'New Type', new_category_subcategory_path(@category) %>|<%= link_to 'Back to Categories', brand_categories_path(@category.brand) %>
+<%= link_to 'New Type!!', new_category_subcategory_path(@category.brand) %>|<%= link_to 'Back to Categories', brand_categories_path(@category.brand) %>

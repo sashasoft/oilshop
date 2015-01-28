@@ -34,7 +34,6 @@ class CategoriesController < ApplicationController
       render 'new'
     end
     
-    #redirect_to brand_categories_path
   end
   
   def destroy
