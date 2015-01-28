@@ -11,16 +11,10 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    #@brand = Brand.find(params[:brand_id])
-    #@categories = @brand.categories.all
-    #@categories = Category.all
     @category = Category.find(params[:id])
   end
   
   def edit
-    #@brand = Brand.find(params[:brand_id])
-    #@categories = @brand.categories.all
-    #@categories = @categories.all
     @category = Category.find(params[:id])
   end
   
@@ -33,12 +27,9 @@ class CategoriesController < ApplicationController
     else
       render 'new'
     end
-    
   end
   
   def destroy
-    #@brand = Brand.find(params[:brand_id])
-    #@category = @brand.categories.find(params[:id])
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to brand_categories_path(@category.brand)
