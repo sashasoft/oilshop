@@ -30,6 +30,12 @@ class SubcategoriesController < ApplicationController
   end
   
   def update
+    @subcategory = Subcategory.find(params[:id])
+    if @subcategory.update(subcategory_params)
+      redirect_to category_subcategories_path(@subcategory.category)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

@@ -30,7 +30,13 @@ class CategoriesController < ApplicationController
   end
   
   def update
-    
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to brand_categories_path(@category.brand)
+    else
+      render 'edit'
+    end
+      
   end
   
   def destroy

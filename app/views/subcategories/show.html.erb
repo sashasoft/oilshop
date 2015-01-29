@@ -7,3 +7,6 @@
   <%= @subcategory.description %>
 </p>
 <%= link_to 'All types', category_subcategories_path(@subcategory.category) %>|
+<%= link_to 'Destroy', [@subcategory],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
