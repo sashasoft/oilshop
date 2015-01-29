@@ -28,6 +28,9 @@ class SubcategoriesController < ApplicationController
       render 'new'
     end
   end
+  
+  def update
+  end
 
   def destroy
     @subcategory = Subcategory.find(params[:id])

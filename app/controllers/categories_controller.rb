@@ -29,6 +29,10 @@ class CategoriesController < ApplicationController
     end
   end
   
+  def update
+    
+  end
+  
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
